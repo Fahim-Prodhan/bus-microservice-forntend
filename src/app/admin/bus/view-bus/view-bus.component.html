@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper" style="background-color: #34364e; color:#ffff">
+    <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                <mat-card style="background-color: #3a3d5ae0; margin-top: 10px;">    
+                        <mat-card-title  class="card-title">All Busses List</mat-card-title>
+                                   
+                </mat-card>
+            </div>
+            <div class="col-md-12">
+                
+                <button (click)="openAddForm()" mat-raised-button color="accent"  class="demo-button">
+                  <mat-icon>add_circle</mat-icon> Add Bus
+                  </button>
+                <table>
+                    <tr>
+                        <th>Serial No</th>
+                        <th>Bus Code</th>
+                        <th>Bus Name</th>
+                        <th>Bus Number</th>
+                        <th>Action</th>
+                        <th>Add Schedule</th>
+                      </tr>
+                      <tr *ngFor="let b of allBus | paginate: { itemsPerPage: pageSize, currentPage: page } ; let x = index ">
+                        <td>{{x+1}}</td>
+                        <td>{{b.busCode}}</td>
+                        <td>{{b.busName}}</td>
+                        <td>{{b.busNumber}}</td>
+                        <td>
+                            <button style="background-color: #474a6f;" (click)="openUpdateDialog(b.busId)" class="edit-button">
+                            <mat-icon>edit</mat-icon> 
+                            </button>
+                            <button style="background-color: #404258;" (click)="deleteBus(b.busId)" class="delete-button">
+                                <mat-icon>delete</mat-icon> 
+                            </button>
+                        </td>
+                        <td><button [routerLink]="'/admin/schedule/'+b.busId" class="table-button">Add Schedule</button></td>
+                        
+                      </tr>
+                </table>
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+          </div>  
+      
+    </div>
+</div>
+

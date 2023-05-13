@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ViewRouteComponent } from './view-route.component';
+
+describe('ViewRouteComponent', () => {
+  let component: ViewRouteComponent;
+  let fixture: ComponentFixture<ViewRouteComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ViewRouteComponent]
+    });
+    fixture = TestBed.createComponent(ViewRouteComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

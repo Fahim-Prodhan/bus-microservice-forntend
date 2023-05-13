@@ -1,0 +1,128 @@
+<div class="bootstrap-wrapper" style="background-color: #212F3C;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12"></div>
+  
+        <div class="col-md-3 offset-md-1">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="u-title">
+                  <h1>Users</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Users</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1>{{ userCount }}</h1>
+            </mat-card-content>
+  
+            <mat-card-actions>
+              <button [routerLink]="'/seller/all-users'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+  
+        <div class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="b-title">
+                  <h1>Busses</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Busses</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1>{{ busCount }}</h1>
+            </mat-card-content>
+            <mat-card-actions>
+              <button [routerLink]="'/seller/bus'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="s-title">
+                  <h1>Schedules</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Schedules</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1>{{ scheduleCount }}</h1>
+            </mat-card-content>
+            <mat-card-actions>
+              <button [routerLink]="'/seller/schedule'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col-md-3 offset-md-1 mt-15">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="c-title">
+                  <h1>Customers</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Customers</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1>{{ customerCount }}</h1>
+            </mat-card-content>
+  
+            <mat-card-actions>
+              <button [routerLink]="'/seller/customer'">View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="title">
+                  <h1>Bus seats</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Seats</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1>{{ seatCount }}</h1>
+            </mat-card-content>
+  
+            <mat-card-actions>
+              <button [routerLink]="'/seller/schedule'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="r-title">
+                  <h1>Bus Routes</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Routes</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1>{{ routeCount }}</h1>
+            </mat-card-content>
+  
+            <mat-card-actions>
+              <button [routerLink]="'/seller/routes'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  

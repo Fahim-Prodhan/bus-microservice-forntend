@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper" style="background-color: #34364e;">
+    <div class="container">
+        <div class="row">
+            
+                <mat-card style="background-color: #3a3d5ae0; color:#ffff; margin-bottom: 10px;  margin-top: 10px;" class="card-title">
+                    
+                    <mat-card-title >All Routes List</mat-card-title>
+                
+            </mat-card>
+            
+            <table style="background-color: #34364e; color:#ffff">
+                <tr>
+                  <th>Serial No</th>
+                  <th>Departure</th>
+                  <th>Destination</th>
+                  <th>Time</th>
+                  <th>Pirce</th>
+                  <th>View Seats</th>
+                </tr>
+                <tr *ngFor="let r of scheduleData.routes | paginate: { itemsPerPage: pageSize, currentPage: page }; let x = index">
+                  <td>{{ x + 1 }}</td>
+                  <td>{{ r.departure }}</td>
+                  <td>{{ r.destination }}</td>
+                  <td>{{ r.time }}</td>
+                  <td>{{ r.price }}</td>
+                  <td><button  [routerLink]="'/normal/schedule/seat/' + r.scheduleId"  class="table-button">
+                    View Seats
+                    </button>
+                  </td>
+                </tr>
+              </table>
+              <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="bootstrapt-wrapper" style="background-color: #34364e; color: #ffff;">
+  <div class="container">
+    <div class="row">
+      <mat-card style="background-color: #3a3d5ae0">
+        <mat-card-title class="card-title">Add Schedule</mat-card-title>
+      </mat-card>
+      <div class="col-md-4 offset-md-4">
+        <form (ngSubmit)="formSubmit()">
+          <div class="form-group">
+            <label style="color:#91c4f4" for="start-end-input">Start and End:</label>
+            <input
+            [(ngModel)]="schedule.startAndEnd"
+              type="text"
+              class="form-control"
+              id="start-end-input"
+              name="startAndEnd"
+              required
+              placeholder="Enter Start And End"
+            />
+          </div>
+          <div class="form-group">
+            <label for="dateInput">Date</label>
+            <input type="date" class="form-control" id="dateInput" name="date" [(ngModel)]="schedule.date">
+          </div>
+          <div class="col-md-6 offset-md-3">
+            <button class="save-button" mat-raised-button color="primary" type="submit">
+              Save
+            </button>
+            <button (click)="goBack()" mat-raised-button mat-dialog-close color="warn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- {{schedule | json}} -->

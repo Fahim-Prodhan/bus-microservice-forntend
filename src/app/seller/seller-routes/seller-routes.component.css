@@ -1,0 +1,93 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+}
+table tr td, th {
+    padding: 7px 1px;
+    border: 0.5px solid #e2e2e2 ;
+    text-align: center;    
+
+}
+.table-button{
+    margin-left: 2px;
+    
+ }
+ .mat-mdc-raised-button.mat-accent {
+    --mdc-protected-button-container-color: rgb(0, 218, 0);
+    --mdc-protected-button-label-text-color: #fff;
+}
+
+.card-title{
+    text-align: center;
+    padding: 10px;
+} 
+.mat-form {
+    margin: 10px;
+    padding: 20px 0px;
+}
+
+.form-width{
+    width: 80%;
+}
+
+.col-md-7{
+    display: block;
+    margin-top: 5px;
+    padding: 0;
+    text-align: center;
+}
+  mat-form-field {
+    margin-left: 10px;
+
+}
+
+  .button{
+    margin: 10px;
+}
+
+  .demo-button{
+    margin-top: 10px;
+    
+}
+
+.edit-button{
+    margin-left: 1px;
+    color: #00b7ffdd;
+    border: none; 
+    margin-bottom: 2px;
+ }
+ .delete-button{
+    margin-left: 1px;
+    color: red;
+    border: none; 
+ }
+.table-button{
+   margin-left: 2px;
+   
+}
+.mat-mdc-raised-button.mat-accent {
+    --mdc-protected-button-container-color: rgb(0, 218, 0);
+    --mdc-protected-button-label-text-color: #fff;
+}
+
+.card-title{
+    text-align: center;
+    padding: 10px;
+}
+.save-button{
+    margin-right: 5px;
+}
+.heading{
+    margin-bottom: 10px;
+    align-items: center;
+    background-color:#3a3d5ae0;
+    color: #ffff;
+}
+
+.col-md-4{
+    margin-left: 10px;
+    
+}

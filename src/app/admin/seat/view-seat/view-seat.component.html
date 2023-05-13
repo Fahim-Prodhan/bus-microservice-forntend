@@ -1,0 +1,115 @@
+<div class="bootstrap-wrapper" style="background-color: #34364e;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="heading">
+                    <mat-card-header>
+                      <mat-card-title>
+                        <h1>Avaiable Seats</h1>
+                      </mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+            </div>
+            <div class="col-md-4">
+                <body style="color:#ffff">
+                    <div class="seating-chart">
+                      <h3>Bus Code: {{scheduleData.bus.busCode}}</h3>
+                        <div *ngFor="let rowIndex of  [1, 2, 3, 4, 5, 6,7,8,9,10]" class="row">
+                            <div *ngFor="let s of scheduleData.seats.slice((rowIndex - 1) * 4, rowIndex * 4)"
+                                class="seat" [ngClass]="{'available': !s.booked, 'booked': s.booked}" [routerLink]="'/admin/'+ScheduleId+'/add-customer/'+s.seatId">
+                                {{s.seatNo}}</div>
+                        </div>
+                    </div>  
+                </body>  
+            </div>
+            <div class="col-md-7 ">
+              <mat-card class="heading">
+                <mat-card-header>
+                  <mat-card-title>
+                    <h1>Routes</h1>
+                  </mat-card-title>
+                </mat-card-header>
+              </mat-card>
+                
+                    <table style="background-color: #34364e; color:#ffff">
+                      <tr>
+                        <th>Serial No</th>
+                        <th>Departure</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Pirce</th>
+                        <th>Action</th>
+                      </tr>
+                      <tr *ngFor="let r of scheduleData.routes; let x = index">
+                        <td>{{ x + 1 }}</td>
+                        <td>{{ r.departure }}</td>
+                        <td>{{ r.destination }}</td>
+                        <td>{{ r.date | date }}</td>
+                        <td>{{ r.time }}</td>
+                        <td>{{ r.price }}</td>
+                        <td>
+                          <!-- <button class="edit-button">
+                            <mat-icon>edit</mat-icon>
+                          </button> -->
+                          <button style="background-color: #34364e ;" (click)="deleteRoute(r.routeId)"  class="delete-button">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- add route -->
+                    
+                    <mat-card style="background-color: #3e4055; color:#d2d2d2">
+                        <form (ngSubmit)="addRoute()">
+                          <mat-dialog-content>
+                            <h1>
+                              <ul>
+                                Add Route
+                              </ul>
+                            </h1>
+            
+                            <mat-form-field appearance="fill">
+                              <mat-label>From</mat-label>
+                              <input name="departure" [(ngModel)]="route.departure" matInput placeholder="From" />
+                              <mat-icon matSuffix>local_shipping</mat-icon>
+                            </mat-form-field>
+            
+                            <mat-form-field appearance="fill">
+                              <mat-label>Destination</mat-label>
+                              <input name="destination" [(ngModel)]="route.destination" matInput placeholder="Enter destination" />
+                              <mat-icon matSuffix>local_shipping</mat-icon>
+                            </mat-form-field>
+            
+                            <mat-form-field appearance="fill">
+                              <mat-label>Price</mat-label>
+            
+                              <input name="price" [(ngModel)]="route.price" matInput placeholder="Enter Pirce" />
+                              <mat-icon matSuffix>money</mat-icon>
+                            </mat-form-field>
+            
+                            <mat-form-field appearance="fill">
+                              <mat-label>Time</mat-label>
+                              <input name="time" [(ngModel)]="route.time" matInput placeholder="Enter Time" />
+                              <mat-icon matSuffix>timer</mat-icon>
+                            </mat-form-field>
+                          </mat-dialog-content>
+            
+                          <div class="button">
+                            <mat-dialog-actions align="end">
+                              <button class="save-button" mat-raised-button color="primary" type="submit">
+                                Save
+                              </button>
+                              <button mat-raised-button mat-dialog-close color="warn">
+                                Cancel
+                              </button>
+                            </mat-dialog-actions>
+                          </div>
+                        </form>
+                      </mat-card> 
+                      <!-- {{route | json}}  -->
+            </div>
+        </div>
+    </div>
+</div>

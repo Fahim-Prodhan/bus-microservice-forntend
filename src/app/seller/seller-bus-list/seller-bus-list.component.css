@@ -1,0 +1,54 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+
+}
+table tr td, th {
+    padding: 10px 20px;
+    border: 0.5px solid #e2e2e2 ;
+    text-align: center;
+    
+
+}
+.demo-button{
+    margin-top: 10px;
+    
+}
+
+.edit-button{
+    margin-left: 1px;
+    color: #f9fcfd;
+    border: none; 
+    margin-bottom: 2px;
+ }
+ .delete-button{
+    margin-left: 1px;
+    color: red;
+    border: none; 
+ }
+.table-button{
+   margin-left: 2px;
+   
+}
+.mat-mdc-raised-button.mat-accent {
+    --mdc-protected-button-container-color: #50577A;
+    --mdc-protected-button-label-text-color: #fff;
+}
+
+.card-title{
+    text-align: center;
+    padding: 10px;
+}
+.filter {
+    display: flex;
+    align-items:flex-end;
+    width: 20%;
+    margin-top: 10px;
+   
+}
+.add-button{
+    margin-left: 1px;
+    color: red;
+    border: none; 
+}

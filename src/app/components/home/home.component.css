@@ -1,0 +1,134 @@
+body {
+	background-image: url('../../../assets/images/white-city-bus-3d-rendering_256339-1847_home.jpg');
+	background-repeat: no-repeat;
+	background-size:100%;
+  
+	background-position: center;
+  
+  }
+
+  header{
+    background-color: #F0EEED;
+    background-image: url('../../../assets/images/white-city-bus-3d-rendering_256339-1847_home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .login{
+    height: 0;
+    width: 0px;
+  }
+  
+  .container h1{
+    margin-top: 25vh;
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(255, 14, 135);
+    text-align: center;
+
+  } 
+  .container h2{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+
+  }
+  .container h3 {
+    color: white;
+    font-size:30px ;
+    text-align: center;
+    margin-bottom: 200px;
+  }
+
+  .container1 h1{
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(255, 14, 135);
+    text-align: center;
+  }
+  .container1 h2{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 5vh;
+
+  }
+
+  /* .col-md-5{
+    margin-bottom: 200px;
+  } */
+
+
+
+
+  /*---------------------- after log in part------------------------- */
+
+  /* destination part */
+  
+
+
+
+
+
+  /* Service part */
+
+ 
+
+  .service-mat{
+    margin-top: 10px;
+  }
+
+  .service-title {
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 30px;
+    color: #472183;
+  }
+
+  .service-mat-card{
+    margin: 10px 0;
+    background-color: #00b7ffdd;
+    
+  }
+  
+  .service-mat-title{
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+
+  }
+
+  .service-mat-subtitle {
+    color: white;
+    text-align: center;
+    padding: 30px;
+  }
+  .service-mat-img{
+    width: 30%;
+    padding: 20px 0;
+    margin-left: 33%;
+   
+  }
+  .col-md-3{
+    margin-bottom: 10vh;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container h1{
+      margin-top: 10vh;
+      font-size: 50px;
+      font-weight: bolder;
+      color: rgb(255, 14, 135);
+      text-align: center;
+  
+    } 
+  }
+
+
+
+  
+
+ 
+

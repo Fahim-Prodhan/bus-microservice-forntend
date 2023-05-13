@@ -1,0 +1,92 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 15px;
+
+}
+table tr td, th {
+    padding: 10px 20px;
+    border: 0.5px solid #e2e2e2 ;
+    text-align: center;
+    
+
+}
+.demo-button{
+    margin-top: 10px;
+    
+}
+.table-button{
+  display: inline-block;
+  padding: 6px px;
+  background-color: #00c314;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.table-button:hover{
+  background-color: #00c314ac;
+
+}
+.edit-button{
+   margin-left: 1px;
+   color: #f9fcfd;
+   border: none; 
+   margin-bottom: 2px;
+}
+.delete-button{
+   margin-left: 1px;
+   color: rgb(255, 0, 0);
+   border: none; 
+}
+
+
+.mat-mdc-raised-button.mat-accent {
+    --mdc-protected-button-container-color: #50577A;
+    --mdc-protected-button-label-text-color: #fff;
+}
+
+.card-title{
+    text-align: center;
+    padding: 10px;
+}
+.filter {
+    display: flex;
+    align-items:flex-end;
+    width: 20%;
+    margin-top: 10px;
+   
+}
+
+
+/* pagination css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+    list-style-type: none;
+  }
+  
+  .pagination li.active {
+    font-weight: bold;
+  }
+  
+  .pagination li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .pagination li.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  

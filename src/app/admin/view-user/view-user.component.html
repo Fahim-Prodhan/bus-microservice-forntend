@@ -1,0 +1,48 @@
+<div class="bootstrap-wrapper" style="background-color: #34364e; color:#ffff">
+    <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                <mat-card style="background-color: #3a3d5ae0; color:#ffff; margin-bottom: 10px;" class="card-title">
+                    
+                        <mat-card-title >All Users List</mat-card-title>
+                    
+                </mat-card>
+                <mat-form-field class="filter">
+                  <mat-label>Filter</mat-label>
+                  <input [(ngModel)]="searchText" matInput placeholder="search" #input>
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                
+                <table>
+                    <tr>
+                      <th>Serial No</th>
+                      <th>Username</th>
+                      <th>Full name</th>
+                      <th>email</th>
+                      <th>Phone</th>
+                      <th>Action</th>
+                      </tr>
+                      <tr *ngFor="let u of users | userSearch: searchText ; let x = index" >
+
+                        <td>{{x+1}}</td>
+                        <td>{{u.username}} @{{u.authorities[0].authority}}</td>
+                        <td>{{u.firstName}} {{u.lastName}}</td>
+                        <td>{{u.email}}</td>
+                        <td>{{u.phone}}</td>
+                        <td>
+                            <!-- <button style="background-color: #404258;" class="edit-button">
+                            <mat-icon>edit</mat-icon> 
+                            </button> -->
+                            <button style="background-color: #404258;" (click)=" deleteUser(u.id)"  class="delete-button">
+                                <mat-icon>delete</mat-icon> 
+                            </button>
+                        </td>
+                        
+                      </tr>
+                </table>
+            </div>
+          </div>  
+      
+    </div>
+</div>

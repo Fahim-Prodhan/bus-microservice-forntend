@@ -1,0 +1,78 @@
+@media print {
+    /* hide the print button on the printed page */
+    .print {
+      display: none;
+    }
+    .cancel {
+        display: none;
+    }
+  }
+
+  body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	background-color: #f1f1f1;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+
+	width: 340px;
+   
+	margin: 10px auto;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    
+}
+
+h1 {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	text-transform: uppercase;
+	color: #003366;
+}
+
+h2 {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 20px 0 10px 0;
+	padding: 0;
+	color: #003366;
+    text-align: center;
+}
+
+.info {
+	margin-bottom: 20px;
+}
+
+.info p {
+	margin: 5px 0;
+	font-weight: bold;
+	color: #555;
+	line-height: 1.
+}
+img{
+    width: 50%;
+}
+
+.print {
+    margin-top: 10px;
+    
+    margin-bottom: 20px;
+}
+
+.cancel {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+
+  

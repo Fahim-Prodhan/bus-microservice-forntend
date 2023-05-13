@@ -1,0 +1,61 @@
+body {
+	background-image: url('../../../assets/images/white-city-bus-3d-rendering_256339-1847_home.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+  }
+  /* Service part */
+  .service-mat{
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    background-color: #00b7ffdd;
+  }
+
+  .service-title {
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 30px;
+    color: #ffffff;
+  }
+
+  .service-mat-card{
+    margin: 10px 0;
+    background-color: #4B56D2;
+    
+  }
+  
+  .service-mat-title{
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+
+  }
+
+  .service-mat-subtitle {
+    color: white;
+    text-align: center;
+    padding: 30px;
+  }
+  .service-mat-img{
+    width: 30%;
+    padding: 20px 0;
+    margin-left: 33%;
+   
+  }
+
+  .offset-md-3 h1{
+    font-size: 50px;
+    color: #F1F6F5;
+    margin-top: 5vh;
+    text-align: center;
+    font-weight:500;
+
+  }
+  .offset-md-3 h2{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    margin-top: 5vh;
+    text-align: center;
+    font-weight:500;
+
+  }

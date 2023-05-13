@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+</head>
+<body style="background-color: #212F3C ;">
+	
+	<div class="container">
+		<div class="box">
+			<h2 style="color:#fff">Add New Seller</h2>
+			<!-- {{seller | json}} -->
+			<form (ngSubmit)="formSubmit()">
+				<input [(ngModel)]="seller.username" name="username" type="text" placeholder="Username">
+				<input [(ngModel)]="seller.firstName" name="firstName" type="text" placeholder="First Name">
+				<input [(ngModel)]="seller.lastName" name="lastName" type="text" placeholder="Last Name">
+				<input [(ngModel)]="seller.email" name="email" type="email" placeholder="Email Address">
+				<input [(ngModel)]="seller.phone" name="phone" type="tel" placeholder="Phone">
+				<input [(ngModel)]="seller.password" name="password" type="password" placeholder="Password">
+				
+				<button type="submit" class="btn">Create seller</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+</head>
+<body style="background-color: #212F3C ;">
+	
+	<div class="container">
+		<div class="box">
+			<h2 style="color:#fff">Add New Admin</h2>
+			<!-- {{admin | json}} -->
+			<form (ngSubmit)="formSubmit()">
+				<input [(ngModel)]="admin.username" name="username" type="text" placeholder="Username">
+				<input [(ngModel)]="admin.firstName" name="firstName" type="text" placeholder="First Name">
+				<input [(ngModel)]="admin.lastName" name="lastName" type="text" placeholder="Last Name">
+				<input [(ngModel)]="admin.email" name="email" type="email" placeholder="Email Address">
+				<input [(ngModel)]="admin.phone" name="phone" type="tel" placeholder="Phone">
+				<input [(ngModel)]="admin.password" name="password" type="password" placeholder="Password">
+				
+				<button type="submit" class="btn">Create Admin</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

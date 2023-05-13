@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper" style="background-color: #34364e; color:#ffff">
+    <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                <mat-card style="background-color: #3a3d5ae0; margin-top: 10px;">    
+                        <mat-card-title  class="card-title">All Busses List</mat-card-title>
+                                   
+                </mat-card>
+            </div>
+            <div class="col-md-12">
+                
+                <table>
+                    <tr>
+                        <th>Serial No</th>
+                        <th>Bus Code</th>
+                        <th>Bus Name</th>
+                        <th>Bus Number</th>
+                        
+                      </tr>
+                      <tr *ngFor="let b of allBus | paginate: { itemsPerPage: pageSize, currentPage: page } ; let x = index ">
+                        <td>{{x+1}}</td>
+                        <td>{{b.busCode}}</td>
+                        <td>{{b.busName}}</td>
+                        <td>{{b.busNumber}}</td>
+                       
+                        
+                      </tr>
+                </table>
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+          </div>  
+      
+    </div>
+</div>
+

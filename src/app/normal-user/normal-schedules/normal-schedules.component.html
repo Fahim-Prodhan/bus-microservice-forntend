@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper" style="background-color: #34364e; color:#ffff">
+    <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                <mat-card style="background-color: #3a3d5ae0; margin-bottom: 10px; margin-top: 10px;">
+                    
+                        <mat-card-title  class="card-title">All Schedule List</mat-card-title>
+                    
+                </mat-card> 
+                <mat-form-field class="filter">
+                    <mat-label>Filter</mat-label>
+                    <input [(ngModel)]="searchText" matInput placeholder="search" #input>
+                  </mat-form-field>
+                
+            </div>
+            <div class="col-md-12 ">
+                
+                <table>
+                    <tr>
+                        <th>Serial No</th>
+                        <th>Date</th>
+                        <th>Bus Name</th>
+                        <th>Bus Code</th>
+                        <th>Start-End Point</th>                     
+                     
+                        <th>View Seats</th>
+                      </tr>
+                      <tr *ngFor="let s of schedules | schdule:searchText | paginate: { itemsPerPage: pageSize, currentPage: page } ; let i = index">
+                        <td>{{i+1}}</td>
+                       
+                          <td>{{s.date | date}}</td>
+                        <td>{{s.bus.busName}}</td>
+                        <td>{{s.bus.busCode}}</td>
+                        <td>{{s.startAndEnd}}</td>
+                       
+                        <td><button  [routerLink]="'/normal/schedule/seat/' + s.scheduleId"  class="table-button">
+                           View Seats
+                        </button></td>
+                        
+                      </tr>
+                </table>
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+          </div>  
+      
+    </div>
+</div>

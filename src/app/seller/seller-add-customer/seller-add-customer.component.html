@@ -1,0 +1,128 @@
+<div class="bootstrap-wrapper" style="Background-color:#34364e; color:#f5f5f5">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card style="background-color: #3a3d5ae0;" class="mat-header">
+          <h1>Add New Customer</h1>
+        </mat-card>
+      </div>
+  
+      <div  class="col-md-5">
+        <mat-card style="Background-color:#3a3d5ae0;" class="mat-form">
+          <form (ngSubmit)="addCustomer()">
+            <div class="col-md-10 offset-md-2">
+              <mat-form-field class="form-width">
+                <mat-label>Customer Name</mat-label>
+                <input name="customerName" [(ngModel)]="customers.customerName" matInput
+                  placeholder="Enter Customer Name" />
+                <mat-icon matSuffix>badge</mat-icon>
+              </mat-form-field>
+            </div>
+  
+            <div class="col-md-10 offset-md-2">
+              <mat-form-field class="form-width">
+                <mat-label>Contact Number</mat-label>
+                <input name="customerNumber" [(ngModel)]="customers.customerNumber" matInput
+                  placeholder="Enter Phone Number" />
+                <mat-icon matSuffix>pin</mat-icon>
+              </mat-form-field>
+  
+              <div class="route">
+                <mat-form-field appearance="fill">
+                  <mat-label>From</mat-label>
+                  <mat-select name="route" [(ngModel)]="customers.routeId">
+                    <mat-option *ngFor="let r of schedules.routes" [value]="r.routeId">
+                    {{r.departure}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+    
+                <mat-form-field appearance="fill">
+                  <mat-label>To</mat-label>
+                  <mat-select name="route" [(ngModel)]="customers.routeId">
+                    <mat-option *ngFor="let r of schedules.routes" [value]="r.routeId">
+                    {{r.destination}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+    
+                <mat-form-field appearance="fill">
+                  <mat-label>Time</mat-label>
+                  <mat-select name="route" [(ngModel)]="customers.routeId">
+                    <mat-option *ngFor="let r of schedules.routes" [value]="r.routeId">
+                    {{r.time}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>Price</mat-label>
+                  <mat-select name="route" [(ngModel)]="customers.routeId">
+                    <mat-option *ngFor="let r of schedules.routes" [value]="r.routeId">
+                    {{r.price}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+  
+              </div>
+            </div>
+            <div class="col-md-10 offset-md-2">
+              <mat-slide-toggle class="example-margin" name="booked" [(ngModel)]="seats.booked">
+                Booked
+              </mat-slide-toggle>
+              <button (click)="updateBooking()" class="update-button" mat-button color="primary">
+                Update
+              </button>
+            </div>
+  
+            <div class="col-md-6 offset-md-4">
+              <button class="save-button" mat-raised-button color="primary" type="submit">
+                Save
+              </button>
+              <button (click)="goBack()" mat-raised-button mat-dialog-close color="warn">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </mat-card>
+  
+        <!-- {{customers | json}} -->
+                     
+      </div>
+                <div class="col-md-7">
+                    <mat-card style="background-color: #3a3d5ae0; margin-bottom: 10px;"class="card-title"> 
+                            <mat-card-title >Customer Details</mat-card-title>      
+                    </mat-card>
+                    <table>
+                        <tr>
+                          <th>Serial</th>
+                          <th>Name</th>
+                          <th>Number</th>
+                          <th>Ticket</th>
+                            <th>Action</th>
+                          </tr>
+                          <tr *ngFor="let c of seatCustomer; let x = index" >
+    
+                            <td>{{x+1}}</td>
+                            <td>{{c.customerName}}</td>
+                            <td>{{c.customerNumber}}</td>
+                            <td><button class="ticket" [routerLink]="'/seller/customer/'+c.customerId+'/ticket'">Ticket</button></td>
+                            <td>
+                                <!-- <button style="background-color: #404258;" class="edit-button">
+                                <mat-icon>edit</mat-icon> 
+                                </button> -->
+                                <button style="background-color: #404258;" (click)="deleteCustomer(c.customerId)"  class="delete-button">
+                                    <mat-icon>delete</mat-icon> 
+                                </button>
+                            </td>
+                            
+                          </tr>
+                    </table>
+                </div>
+            
+                    
+                  
+                </div>
+              </div>  
+          
+
+    

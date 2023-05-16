@@ -75,6 +75,9 @@ import { ViewAllTicketsComponent } from './normal-user/view-all-tickets/view-all
 import { RoutesSearchComponent } from './normal-user/routes-search/routes-search.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { RouteSearchSellerComponent } from './seller/route-search-seller/route-search-seller.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { RemoveDublicatePipe } from './search-filter/remove-dublicate.pipe';
 
 
 @NgModule({
@@ -132,6 +135,7 @@ import { RouteSearchSellerComponent } from './seller/route-search-seller/route-s
     ViewAllTicketsComponent,
     RoutesSearchComponent,
     RouteSearchSellerComponent,
+    RemoveDublicatePipe,
    
        
   ],
@@ -158,7 +162,11 @@ import { RouteSearchSellerComponent } from './seller/route-search-seller/route-s
     MatPaginatorModule,
     NgxPaginationModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    })
 
   ],
   providers: [authInterceptorProviders],

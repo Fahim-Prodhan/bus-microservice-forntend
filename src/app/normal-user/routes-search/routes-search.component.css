@@ -56,7 +56,7 @@ form {
   
     font-weight: bold;
   }
-  button {
+  .table-button {
     background-color: #00c314;
     color: #fff;
     padding: 5px 10px;
@@ -65,10 +65,55 @@ form {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    margin-left: 150px;
+    
   }
   
-  button:hover {
+  
+  .table-button:hover {
     background-color: #5d5f7e;
+  }
+
+  /* search Matcard part */
+  .example-header-image{
+    background-image: url('../../../assets/images/Bus-service-logo.png');
+    background-size: cover;
+  }
+  .ml15{
+    margin-left: 15px;
+  }
+
+
+  
+  .not-found-message {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+  }
+  
+  .not-found-message p {
+    font-size: 18px;
+    color: #ff0000; /* Red color for the "Bus Not Found" message */
+  }
+  
+  .not-found-message button{
+    background-color: #007bff; /* Blue color for the "Search Again" button */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .not-found-message a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .not-found-message button:hover {
+    background-color: #00b330; /* Darker blue on hover */
   }
   
  

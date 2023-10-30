@@ -36,8 +36,10 @@ export class ViewCustomersComponent implements OnInit{
     this._customer.getAllCustomers().subscribe(
       (data:any)=> {
         this.customers = data;
-        //sorting data
-        // this.customers.sort((a,b)=>b.customerId - a.customerId);
+         //sort with data
+         this.customers.sort((a,b)=>{
+          return new Date(a.routes.date).getTime()-new Date(b.routes.date).getTime();
+        })
       },
       (error)=>{
         console.log(error);

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable, map, startWith } from 'rxjs';
+import baseUrl from 'src/app/services/helper';
 import { RouteService } from 'src/app/services/route.service';
 
 @Component({
@@ -28,17 +30,22 @@ export class RoutesSearchComponent implements OnInit {
       destination:'',
       time:'',
       price:'',
-      date:new Date
+      date:new Date,
+      bus:{
+        busName:'',
+        busNumber:''
+      }
     }]
-
  
-
   constructor(
     private _route:RouteService,
+    private router:Router,
+
     ){}
 
 
   ngOnInit(): void {
+    
       this._route.getAllRoutes().subscribe(
         (data:any)=>{
           this.routes = data;
@@ -122,14 +129,17 @@ export class RoutesSearchComponent implements OnInit {
       (data:any)=>{
         this.routes = data;
         this.table=true
+        const routeCount = this.routes.length;
         // console.log(data); 
       },
       (error)=>{
         console.log(error);
         
       }
-    )
+    ) 
   }
+
+
 
 
 }

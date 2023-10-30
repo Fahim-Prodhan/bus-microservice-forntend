@@ -170,8 +170,6 @@ export class BookTicketComponent implements OnInit{
         
       }
     )
-
-   
   }
 
   //delete customer

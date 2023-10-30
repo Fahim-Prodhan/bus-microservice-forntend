@@ -13,6 +13,7 @@
                   <th>Serial No</th>
                   <th>Departure</th>
                   <th>Destination</th>
+                  <th>Date</th>
                   <th>Time</th>
                   <th>Pirce</th>
                   <th>View Seats</th>
@@ -21,6 +22,7 @@
                   <td>{{ x + 1 }}</td>
                   <td>{{ r.departure }}</td>
                   <td>{{ r.destination }}</td>
+                  <td>{{ r.date | date }}</td>
                   <td>{{ r.time }}</td>
                   <td>{{ r.price }}</td>
                   <td><button  [routerLink]="'/normal/schedule/seat/' + r.scheduleId"  class="table-button">

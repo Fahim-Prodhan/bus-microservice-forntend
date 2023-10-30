@@ -18,6 +18,14 @@ export class NormalRoutesComponent implements OnInit{
       this._routeService.getAllRoutes().subscribe(
         (data:any)=>{
           this.scheduleData.routes = data;
+           //sort with data
+         this.scheduleData.routes.sort((a,b)=>{
+          return new Date(b.date).getTime()-new Date(a.date).getTime();
+        })
+        },
+        (error)=>{
+          console.log(error);
+          
         }
       )
   }
@@ -34,7 +42,8 @@ export class NormalRoutesComponent implements OnInit{
         departure:'',
         destination:'',
         time:'',
-        price:''
+        price:'',
+        date:''
       }]
     }
   

@@ -14,10 +14,23 @@
                 <body style="color:#ffff">
                     <div class="seating-chart">
                       <h3>Bus Code: {{scheduleData.bus.busCode}}</h3>
-                        <div *ngFor="let rowIndex of  [1, 2, 3, 4, 5, 6,7,8,9,10]" class="row">
-                            <div *ngFor="let s of scheduleData.seats.slice((rowIndex - 1) * 4, rowIndex * 4)"
-                                class="seat" [ngClass]="{'available': !s.booked, 'booked': s.booked}" [routerLink]="s.booked ? null : '/normal/'+ScheduleId+'/add-customer/'+s.seatId">
-                                {{s.seatNo}}</div>
+                      <div id="seat-color">
+                        <p class="color">Avaiable</p>
+                        <p class="color">Selected</p>
+                        <p class="color">Booked</p>
+                      </div>
+                      <div class="steering">
+                        <img src="../../../assets/images/64-646273_steering-wheel-png.png" alt="">
+                      </div>
+                        <div *ngFor="let rowIndex of  [1, 2, 3, 4, 5, 6,7,8,9,10]" class="row">                        
+                              <a target="_blank" class="row" *ngFor="let s of scheduleData.seats.slice((rowIndex - 1) * 4, rowIndex * 4)"
+                              class="seat" [ngClass]="{'available': !s.booked, 'booked': s.booked, 'selected': isSelected(s.seatId)}" 
+                              (click)="selectSeat(s.seatId)"
+                             
+                              > 
+                              <div>{{s.seatNo}}</div>
+                            </a>
+                            <!-- [routerLink]="s.booked ? null : '/normal/'+ScheduleId+'/add-customer/'+s.seatId" -->
                         </div>
                     </div>  
                 </body>  
@@ -50,8 +63,97 @@
                         <td>{{ r.price }}</td>
                         
                       </tr>
-                    </table>
-                   
+                    </table>   
+
+                    <mat-card style="Background-color:#3a3d5ae0;" class="mat-form">
+                      <form ngNativeValidate (ngSubmit)="addCustomer()">
+                       
+                          <mat-form-field appearance="fill" >
+                            <mat-label>Customer Name</mat-label>
+                            <input name="cusomerName" [(ngModel)]="customers.customerName" matInput
+                              placeholder="Enter Customer Name" />
+                           
+                          </mat-form-field>
+                      
+              
+                        
+                          <mat-form-field appearance="fill" >
+                            <mat-label>Contact Number</mat-label>
+                            <input name="customerNumber" [(ngModel)]="customers.customerNumber" matInput
+                              placeholder="Enter Phone Number" />
+                          </mat-form-field>
+
+                          <div  *ngIf="selectedSeatInfo.length" class="readonly-select">                   
+                            <mat-form-field class="form-width">   
+                              <input
+                               name="bookedSeats" 
+                               [(ngModel)]="customers.bookedSeats" 
+                               matInput placeholder="Selected seats" />    
+                            </mat-form-field>
+                          </div>
+              
+                          
+                            <mat-form-field  appearance="fill">
+                              <mat-label>From</mat-label>
+                              <mat-select name="route" [(ngModel)]="customers.routeId" (ngModelChange)="onRouteSelectionChange()">
+                                <mat-option *ngFor="let r of scheduleData.routes" [value]="r.routeId">
+                                {{r.departure}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                
+                            <mat-form-field appearance="fill">
+                              <mat-label>To</mat-label>
+                              <mat-select name="route" [(ngModel)]="customers.routeId" (ngModelChange)="onRouteSelectionChange()">
+                                <mat-option *ngFor="let r of scheduleData.routes" [value]="r.routeId">
+                                {{r.destination}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                
+                            <mat-form-field appearance="fill" class="readonly-select">
+                              
+                              <mat-select name="route" [(ngModel)]="customers.routeId">
+                                <mat-option *ngFor="let r of scheduleData.routes" [value]="r.routeId">
+                               Time: {{r.time}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+              
+                            <mat-form-field appearance="fill" class="readonly-select">
+                              
+                              <mat-select name="route" [(ngModel)]="customers.routeId">
+                                <mat-option *ngFor="let r of scheduleData.routes" [value]="r.routeId">
+                               Seat Price: {{r.price}} ৳
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+
+                            <!-- <div  *ngIf="selectedSeatInfo.length" class="readonly-select">                   
+                              <mat-form-field class="form-width">   
+                                <input name="bookedSeats" [(ngModel)]="customers.bookedSeats" matInput placeholder="Selected seats" />    
+                              </mat-form-field>
+                            </div> -->
+                     
+                            <div>
+                              <mat-form-field *ngIf="click" appearance="fill" class="readonly-select">
+                              <mat-select  name="route" [(ngModel)]="customers.routeId">
+                                <mat-option *ngFor="let r of scheduleData.routes" [value]="r.routeId">
+                                Total = {{r.price * selectedSeatInfo.length}} ৳
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            </div>
+                        <div class="col-md-6 offset-md-3">
+                          <button [disabled]="!isBuyButtonEnabled()" class="save-button" mat-raised-button color="primary" type="submit">
+                            Buy Ticke
+                          </button>
+                          <button  mat-raised-button mat-dialog-close color="warn">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </mat-card>  
             </div>
         </div>
     </div>

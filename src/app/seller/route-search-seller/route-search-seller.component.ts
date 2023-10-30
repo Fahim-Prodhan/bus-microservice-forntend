@@ -29,7 +29,11 @@ export class RouteSearchSellerComponent {
       destination:'',
       time:'',
       price:'',
-      date:new Date
+      date:new Date,
+      bus:{
+        busName:'',
+        busNumber:''
+      }
     }]
 
  

@@ -18,6 +18,10 @@ ngOnInit(): void {
     this._routeService.getAllRoutes().subscribe(
       (data:any)=>{
         this.scheduleData.routes = data;
+         //sort with data
+         this.scheduleData.routes.sort((a,b)=>{
+          return new Date(a.date).getTime()-new Date(b.date).getTime();
+        })
       }
     )
 }
@@ -57,7 +61,7 @@ ngOnInit(): void {
       
           this.scheduleData.routes = this.scheduleData.routes.filter((froute)=>froute.routeId != routeId);
       
-          Swal.fire("Deleted","Bus is deleted","success")
+          Swal.fire("Deleted","Route is deleted","success")
         },
         (error)=>{
           console.log(error);

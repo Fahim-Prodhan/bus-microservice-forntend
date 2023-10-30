@@ -42,7 +42,7 @@ export class SellerScheduleListComponent implements OnInit{
 
         //sort with data
         this.schedules.sort((a,b)=>{
-          return new Date(a.date).getTime()-new Date(b.date).getTime();
+          return new Date(b.date).getTime()-new Date(a.date).getTime();
         })
       },
       (error)=>{

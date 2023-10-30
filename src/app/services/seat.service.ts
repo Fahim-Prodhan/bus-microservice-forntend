@@ -18,5 +18,9 @@ export class SeatService {
     return this.http.put(`${baseUrl}/api/seat`,seat);
   }
 
+  public updateSeatBookStatus(seatIds:Number[]) {
+    return this.http.put(`${baseUrl}/api/seat/book-seats`,seatIds);
+  }
+
 
 }

@@ -19,19 +19,19 @@ export class TicketComponent implements OnInit{
   customerData={
     customerName:'',
     customerNumber:'',
+    bookedSeats:'',
+    totalPrice:0,
     routes:{
       destination:'',
       departure:'',
       time:'',
       date:'',
-      price:''
+      price:0
     },
     busSchedule:{
       date:''
     },
-    seat:{
-      seatNo:''
-    }
+   
   }
   customerId:any
 

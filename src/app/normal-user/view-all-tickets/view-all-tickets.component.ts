@@ -13,7 +13,15 @@ export class ViewAllTicketsComponent {
   page=1
   pageSize=10
 
-  customers:any
+  customers = [
+    {
+      customerId:'',
+      routes:{
+        date:''
+      }
+    },
+    
+  ]
   user={
     id:0
   }
@@ -34,6 +42,11 @@ export class ViewAllTicketsComponent {
         this._customer.getAllCustomersByUserId(this.user.id).subscribe(
           (data:any)=>{
             this.customers = data;
+
+             //sort with data
+             this.customers.sort((a, b) => {
+              return new Date(a.routes.date).getTime() - new Date(b.routes.date).getTime();
+            });
           },
           (error)=>{
             console.log(error);

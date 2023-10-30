@@ -1,3 +1,11 @@
+/* matform */
+
+.readonly-select {
+  pointer-events: none; 
+  color: #888; 
+  cursor: not-allowed; 
+}
+
 .seating-chart {
     display: flex;
     flex-direction: column;
@@ -9,6 +17,7 @@
     display: flex;
     justify-content: left;
     align-items: left;
+    margin-left: 10px;
   }
   
   .seat {
@@ -23,15 +32,17 @@
   
   .available {
     background-color: rgb(17, 174, 17);
+    
   }
-  
+
   .selected {
-    background-color: blue;
+    background-color: blue; 
   }
   
   .booked {
     background-color: red;
     cursor: not-allowed;
+    pointer-events: none; 
   }
   
   .disabled {
@@ -70,9 +81,15 @@ table tr td, th {
 }
 
 .form-width{
-    width: 80%;
+    width: 70%;
 }
 
+.steering img{
+  margin-left: 180px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  max-width: 55px;
+}
 .col-md-7{
     display: block;
     margin-top: 5px;
@@ -127,7 +144,57 @@ table tr td, th {
     color: #ffff;
 }
 
+
+
 .col-md-4{
     margin-left: 10px;
     
+}
+
+#seat-color{
+  display: flex;
+  width: 50%;
+}
+#seat-color .color{
+  padding: 5px 10px;
+  background-color: rgb(17, 174, 17);
+  margin-right: 10px;
+}
+
+#seat-color .color:nth-child(2) {
+  background-color: blue;
+}
+#seat-color .color:nth-child(3) {
+  background-color: red;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.selected-seat-info {
+  color: #ffff;
+  padding: 10px; 
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.selected-seat-info ul{
+  list-style-type: no;
+}
+.selected-seat-info button {
+  background-color: rgb(17, 174, 17);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.selected-seat-info button:hover {
+  background-color: rgb(0, 117, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
 }

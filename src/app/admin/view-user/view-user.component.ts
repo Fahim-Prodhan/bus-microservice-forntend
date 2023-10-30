@@ -27,8 +27,6 @@ export class ViewUserComponent implements OnInit{
         authority:''
       }
     ]
-
-
   }]
 
   ngOnInit(): void {

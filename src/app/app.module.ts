@@ -78,6 +78,7 @@ import { RouteSearchSellerComponent } from './seller/route-search-seller/route-s
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { RemoveDublicatePipe } from './search-filter/remove-dublicate.pipe';
+import { SearchByDateComponent } from './normal-user/search-by-date/search-by-date.component';
 
 
 @NgModule({
@@ -136,6 +137,7 @@ import { RemoveDublicatePipe } from './search-filter/remove-dublicate.pipe';
     RoutesSearchComponent,
     RouteSearchSellerComponent,
     RemoveDublicatePipe,
+    SearchByDateComponent,
    
        
   ],
@@ -165,7 +167,7 @@ import { RemoveDublicatePipe } from './search-filter/remove-dublicate.pipe';
     ReactiveFormsModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({
-      showForeground:true
+      showForeground:true,
     })
 
   ],

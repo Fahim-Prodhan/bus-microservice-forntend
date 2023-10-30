@@ -12,7 +12,13 @@ export class SellerCustomerListComponent implements OnInit{
   page=1
   pageSize=10
 
-  customers:any
+  customers = [
+    {
+      routes:{
+        date:''
+      }
+    }
+  ]
   user={
     id:0
   }
@@ -33,6 +39,10 @@ export class SellerCustomerListComponent implements OnInit{
         this._customer.getAllCustomersByUserId(this.user.id).subscribe(
           (data:any)=>{
             this.customers = data;
+             //sort with data
+         this.customers.sort((a,b)=>{
+          return new Date(b.routes.date).getTime()-new Date(a.routes.date).getTime();
+        })
           },
           (error)=>{
             console.log(error);

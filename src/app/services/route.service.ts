@@ -17,6 +17,10 @@ export class RouteService {
     return this.http.delete(`${baseUrl}/api/route/${routeId}`)
   }
 
+  public getRouteById(routeId:any) {
+    return this.http.get(`${baseUrl}/api/route/${routeId}`);
+  }
+
   public getAllRoutes(){
     return this.http.get(`${baseUrl}/api/route`)
   }
@@ -29,6 +33,11 @@ export class RouteService {
     
     return this.http.get(`${baseUrl}/api/route/search`,{params:params});
   
+  }
+
+  public serachbyDate(date:any) {
+    let params = new HttpParams().set('date',this.formatDate(date));
+    return this.http.get(`${baseUrl}/api/route/searchByDate`,{params:params})
   }
 
 

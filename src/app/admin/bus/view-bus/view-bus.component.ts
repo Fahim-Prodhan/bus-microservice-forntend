@@ -65,7 +65,7 @@ ngOnInit(): void {
   }
   
 
-//delete quiz
+//delete bus
 deleteBus(busId:any){
   Swal.fire(
     {

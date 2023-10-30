@@ -45,6 +45,7 @@ import { NormalTicketComponent } from './normal-user/normal-ticket/normal-ticket
 import { ViewAllTicketsComponent } from './normal-user/view-all-tickets/view-all-tickets.component';
 import { RoutesSearchComponent } from './normal-user/routes-search/routes-search.component';
 import { RouteSearchSellerComponent } from './seller/route-search-seller/route-search-seller.component';
+import { SearchByDateComponent } from './normal-user/search-by-date/search-by-date.component';
 
 const routes: Routes = [
   {
@@ -82,6 +83,11 @@ const routes: Routes = [
   {
     path:'normal/search-routes',
     component:RoutesSearchComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'normal/searchByDate',
+    component:SearchByDateComponent,
     pathMatch:'full'
   },
   {

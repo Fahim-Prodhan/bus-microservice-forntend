@@ -5,6 +5,10 @@
     height:60px;
 	
 }
+mat-icon{
+	margin-top: 0px;
+}
+
 
 header {
 	background-color: #404258;

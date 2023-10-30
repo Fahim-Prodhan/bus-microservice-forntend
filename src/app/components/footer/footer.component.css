@@ -33,12 +33,18 @@ footer {
   .social-icons li {
     display: inline-block;
     margin-right: 10px;
+    
   }
   
   .social-icons li a i {
     color: #fbfbfb;
     font-size: 24px;
     line-height: 1;
+    transition: all 0.3s;
+  }
+
+  .social-icons li a{
+    text-decoration: none;
     transition: all 0.3s;
   }
   

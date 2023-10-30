@@ -18,14 +18,13 @@
 
 .container {
 
-	width: 340px;
-   
 	margin: 10px auto;
-	background-color: #fff;
+	background-color: #ffcf9561;
 	padding: 10px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+	width: 50%;
     
 }
 
@@ -49,14 +48,21 @@ h2 {
 }
 
 .info {
-	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.info-section{
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .info p {
 	margin: 5px 0;
 	font-weight: bold;
 	color: #4c4c4c;
-	line-height: 1.
+	line-height: 1;
+	text-align: left;
 }
 img{
     width: 50%;
@@ -73,6 +79,11 @@ img{
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 20px;
+}
+.barcode {
+	margin-left: auto;
+    margin-right: auto;
+    width: 15%;
 }
 
 

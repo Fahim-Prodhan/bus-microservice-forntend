@@ -1,7 +1,7 @@
 
 <div class="bootstrap-wrapper">
-  <ngx-ui-loader></ngx-ui-loader>
-    <app-navbar ></app-navbar>
+  <ngx-ui-loader *ngIf="loaderControlService.shouldShowLoader()" text="Data is Loading" fgsType="three-strings"></ngx-ui-loader>
+  <app-navbar ></app-navbar>
   <router-outlet></router-outlet>
   <app-footer></app-footer>
 </div>

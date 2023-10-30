@@ -4,21 +4,26 @@
 		<h2>Trip Information</h2>
 
         <mat-divider></mat-divider>
+	<div class="info-section">
 		<div class="info">
-			<p>Name:{{customerData.customerName}} </p>
+			<p>Name: {{customerData.customerName}} </p>
 			<p>Phone: {{customerData.customerNumber}} </p>
 			<p>From: {{customerData.routes.departure}}</p>
 			<p>Destination: {{customerData.routes.destination}}</p>
-			<p>Date: {{customerData.busSchedule.date | date}}</p>
+			<p>Date: {{customerData.busSchedule.date | date}}</p>			
+		</div>
+		<div class="info">
 			<p>Time: {{customerData.routes.time}}</p>
-			<p>Price: {{customerData.routes.price}}</p>
-			<p>Seat No: {{customerData.seat.seatNo}}</p>
-					
+			<p>Seat Price: {{customerData.routes.price}} ৳</p>
+			<p>Total Price: {{customerData.totalPrice}} ৳</p>
+			<p>Seat No: {{customerData.bookedSeats}}</p>			
 		</div>
-		<div class="barcode">
+	</div>
+		
+	</div>
+	<div class="barcode">
 	
-            <button (click)="printPage()" class="print" mat-raised-button color="primary">Print</button>
-            <button (click)="backPage()" class="cancel" mat-raised-button color="warn">Cancel</button>
-		</div>
+		<button (click)="printPage()" class="print" mat-raised-button color="primary">Print</button>
+		<button (click)="backPage()" class="cancel" mat-raised-button color="warn">Cancel</button>
 	</div>
 </body>

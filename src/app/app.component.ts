@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderControlService } from './services/loader-control.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bus-micro-front';
+  constructor(public loaderControlService:LoaderControlService){}
 }

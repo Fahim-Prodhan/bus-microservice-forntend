@@ -21,6 +21,7 @@ export class NormalTicketComponent implements OnInit{
     customerNumber:'',
     bookedSeats:'',
     totalPrice:0,
+    transactionId:"",
     routes:{
       destination:'',
       departure:'',

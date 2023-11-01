@@ -33,4 +33,12 @@ export class CustomerService {
     return this.http.get(`${baseUrl}/api/customer/user/${userId}`)
   }
 
+  public countTicktsOfCurrentUser(userId:any) {
+    return this.http.get(`${baseUrl}/api/customer/count/${userId}`);
+  }
+
+  public createTransaction(amount:any) {
+    return this.http.get(`${baseUrl}/api/customer/pay/${amount}`);
+  }
+
 }

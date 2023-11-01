@@ -1,8 +1,7 @@
 <body>
-	<div class="container">
+	<div #container class="container">
 		<h1>Bus Ticket</h1>
 		<h2>Trip Information</h2>
-
         <mat-divider></mat-divider>
 	<div class="info-section">
 		<div class="info">
@@ -17,12 +16,11 @@
 			<p>Seat Price: {{customerData.routes.price}} ৳</p>
 			<p>Total Price: {{customerData.totalPrice}} ৳</p>
 			<p>Seat No: {{customerData.bookedSeats}}</p>			
+			<p>TransactionId: {{customerData.transactionId}}</p>			
 		</div>
-	</div>
-		
+	</div>		
 	</div>
 	<div class="barcode">
-	
 		<button (click)="printPage()" class="print" mat-raised-button color="primary">Print</button>
 		<button (click)="backPage()" class="cancel" mat-raised-button color="warn">Cancel</button>
 	</div>

@@ -1,6 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import { AdminDashboardService } from 'src/app/services/admin-dashboard.service';
+import { CustomerService } from 'src/app/services/customer.service';
 import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-normal-dashboard',
@@ -10,7 +12,12 @@ import { LoginService } from 'src/app/services/login.service';
 export class NormalDashboardComponent implements OnInit{
 
 
-  constructor(private login:LoginService, private _dash:AdminDashboardService){}
+  constructor(
+    private login:LoginService, 
+    private _dash:AdminDashboardService,
+    private _user:UserService,
+    private _customer:CustomerService
+    ){}
 
   customerCount:any
   busCount:any
@@ -18,9 +25,36 @@ export class NormalDashboardComponent implements OnInit{
   userCount:any
   seatCount:any
   routeCount:any
+  ticketCount:any
+
+  user = {
+    id:0
+  }
 
 
   ngOnInit(): void {
+
+    //tickets counts
+    this._user.getCurrentUser().subscribe(
+      (data:any)=>{
+        this.user = data;
+        //get customer of the current user
+        this._customer.countTicktsOfCurrentUser(this.user.id).subscribe(
+          (data:any)=> {
+            this.ticketCount = data;
+          },
+          (error) =>{
+            console.log(error);
+            
+          }
+        )
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
+    
 
     // customer count
       this._dash.getCountOfCustomers().subscribe(

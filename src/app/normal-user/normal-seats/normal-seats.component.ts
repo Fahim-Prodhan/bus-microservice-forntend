@@ -9,6 +9,8 @@ import { RouteService } from 'src/app/services/route.service';
 import { SeatService } from 'src/app/services/seat.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
+declare var Razorpay:any;
+
 
 @Component({
   selector: 'app-normal-seats',
@@ -85,7 +87,8 @@ export class NormalSeatsComponent implements OnInit{
     routeId:'',
     bookedSeats:'',
     totalPrice:0,
-    userId:0
+    userId:0,
+    transactionId:''
   }
 
   user = {
@@ -95,8 +98,7 @@ export class NormalSeatsComponent implements OnInit{
     phone:''
   }
 
-  ngOnInit(): void {
-  
+  ngOnInit(): void {  
     this.ScheduleId = this._route.snapshot.params['scheduleId']
     this.customers.scheduleId = this.ScheduleId
      //schedule Load
@@ -168,9 +170,10 @@ export class NormalSeatsComponent implements OnInit{
     }
   }
 
+
   isSelected(seatId: any): boolean {
     return this.selectedSeatIds.includes(seatId);
-}
+  }
 
   
   onRouteSelectionChange() {
@@ -241,6 +244,57 @@ export class NormalSeatsComponent implements OnInit{
         }
       );
     }
+  }
+
+    //createTransactionAndplaceOrder()
+    createTransactionAndplaceOrder(){
+      let total = this.customers.totalPrice;
+      this._customer.createTransaction(total).subscribe(
+        (data:any)=>{
+          this.openTransactionModal(data);
+        },
+        (error)=>{
+          console.log(error);
+          
+        }
+      )
+    }
+
+  openTransactionModal(data:any) {
+    var options = {
+      order_id: data.orderId,
+      key: data.key,
+      amount: data.amount,
+      currency: data.currency,
+      name: 'Online Bus Service',
+      description: "Payment Online",
+      Image:"https://img.freepik.com/free-vector/bus-cartoon-icon-illustration_138676-1957.jpg?w=2000",
+      handler: (data:any)=>{
+        if(data!= null && data.razorpay_payment_id != null){
+          this.processResponse(data);
+        }else{
+          alert("Payment Failed!")
+        }
+      },
+      prefill:{
+        name: '',
+        email:"busService@gmail.com",
+        contact: "01303687632"
+      },
+      notes:{
+        adress: 'Online Bus Ticket'
+      },
+      theme: {
+        color: '#FE6F5E'
+      }
+    };
+    var razor =  new Razorpay(options)
+    razor.open();
+  }
+
+  processResponse(resp:any){
+    this.customers.transactionId = resp.razorpay_payment_id;
+    this.addCustomer();
   }
   
 }

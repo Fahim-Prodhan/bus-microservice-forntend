@@ -66,7 +66,7 @@
                     </table>   
 
                     <mat-card style="Background-color:#3a3d5ae0;" class="mat-form">
-                      <form ngNativeValidate (ngSubmit)="addCustomer()">
+                      <form ngNativeValidate (ngSubmit)="createTransactionAndplaceOrder()">
                        
                           <mat-form-field appearance="fill" >
                             <mat-label>Customer Name</mat-label>
@@ -102,7 +102,7 @@
                               </mat-select>
                             </mat-form-field>
                 
-                            <mat-form-field appearance="fill">
+                            <mat-form-field  class="readonly-select" appearance="fill">
                               <mat-label>To</mat-label>
                               <mat-select name="route" [(ngModel)]="customers.routeId" (ngModelChange)="onRouteSelectionChange()">
                                 <mat-option *ngFor="let r of scheduleData.routes" [value]="r.routeId">
@@ -111,7 +111,7 @@
                               </mat-select>
                             </mat-form-field>
                 
-                            <mat-form-field appearance="fill" class="readonly-select">
+                            <mat-form-field *ngIf="isRouteSelected" appearance="fill" class="readonly-select">
                               
                               <mat-select name="route" [(ngModel)]="customers.routeId">
                                 <mat-option *ngFor="let r of scheduleData.routes" [value]="r.routeId">
@@ -120,7 +120,7 @@
                               </mat-select>
                             </mat-form-field>
               
-                            <mat-form-field appearance="fill" class="readonly-select">
+                            <mat-form-field *ngIf="isRouteSelected" appearance="fill" class="readonly-select">
                               
                               <mat-select name="route" [(ngModel)]="customers.routeId">
                                 <mat-option *ngFor="let r of scheduleData.routes" [value]="r.routeId">
@@ -146,7 +146,7 @@
                             </div>
                         <div class="col-md-6 offset-md-3">
                           <button [disabled]="!isBuyButtonEnabled()" class="save-button" mat-raised-button color="primary" type="submit">
-                            Buy Ticke
+                            Buy Ticket
                           </button>
                           <button  mat-raised-button mat-dialog-close color="warn">
                             Cancel
@@ -158,3 +158,4 @@
         </div>
     </div>
 </div>
+<!-- {{customers | json}} -->

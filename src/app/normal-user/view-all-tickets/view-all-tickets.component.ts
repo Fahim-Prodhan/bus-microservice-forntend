@@ -15,7 +15,7 @@ export class ViewAllTicketsComponent {
 
   customers = [
     {
-      customerId:'',
+      customerId:0,
       routes:{
         date:''
       }
@@ -44,9 +44,12 @@ export class ViewAllTicketsComponent {
             this.customers = data;
 
              //sort with data
-             this.customers.sort((a, b) => {
-              return new Date(a.routes.date).getTime() - new Date(b.routes.date).getTime();
-            });
+            //  this.customers.sort((a, b) => {
+            //   return new Date(a.routes.date).getTime() - new Date(b.routes.date).getTime();
+            // });
+            this.customers.sort((a,b)=>{
+              return b.customerId - a.customerId;
+            })
           },
           (error)=>{
             console.log(error);

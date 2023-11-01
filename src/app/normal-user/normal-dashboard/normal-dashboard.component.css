@@ -7,6 +7,10 @@
     font-size: 30px;
     
 }  
+a {
+    text-decoration: none;
+    cursor: pointer;  
+}
 
 .title h1{
     text-align: center;
@@ -23,9 +27,12 @@
     color: rgba(255, 255, 255, 0.909);
     border-radius: 10px;
 }
+.ticket {
+    cursor: pointer;
+}
 .u-title h1{
     text-align: center;
-    background-color: #c49300fd;
+    background-color: #00d716fd;
     padding:0 10px;
     color: rgba(255, 255, 255, 0.909);
     border-radius: 10px;

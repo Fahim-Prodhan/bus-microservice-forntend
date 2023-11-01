@@ -16,7 +16,7 @@ export class ViewCustomersComponent implements OnInit{
 
   customers = [
     {
-      customerId:'',
+      customerId:0,
       customerName:'',
       customerNumber:'',
       busSchedule:{

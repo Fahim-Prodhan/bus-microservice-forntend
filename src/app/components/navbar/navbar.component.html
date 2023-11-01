@@ -5,39 +5,43 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar">
-			<div class="logo">
-				<a [routerLink]="''"> <i class="fa-solid fa-bus"></i> Bus Service</a>
+		<div class="logo">
+			<a [routerLink]="''"> <i class="fa-solid fa-bus"></i> Bus Service</a>
+		</div>
+		<nav>
+			
+			<div class="navbar">
+				<ul class="menu">
+					<li><a [routerLink]="''"><i class="fa-solid fa-home"></i> Home</a></li>
+					<li><a [routerLink]="'about'"><i class="fa-solid fa-user"></i> About Us</a></li>
+					<li><a [routerLink]="'services'"><i class="fa-brands fa-usps"></i> Services</a></li>
+					<li><a [routerLink]="'contact'"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+					<li><a *ngIf="searchResultNormal" [href]="'normal/search-routes'">Search Routes <i class="fa fa-search"></i></a></li>
+					<li><a *ngIf="searchResultNormal" [href]="'normal/searchByDate'">Search By Date <i class="fa fa-search"></i></a></li>
+					<li><a *ngIf="searchRestultSeller" [href]="'seller/search-routes'">Search Routes <i class="fa fa-search"></i></a></li>
+					<li>
+						<a  *ngIf="logIn"
+							(click) = "redirectUser()"
+						> {{login.getUser().username}} <i class="fa-solid fa-user-tie"></i> </a>	
+					</li>
+					
+					<li>
+						<a (click)="logout()"
+						 *ngIf="logIn"
+						[routerLink]="'/signup'">Logout <i class="fa-solid fa-right-to-bracket"></i></a>
+					</li>
+					<li>
+						<a *ngIf="!logIn"
+						[routerLink]="'/signup'">Login/Register</a>
+					</li>
+				</ul>	
+				<div class="hamburger-menu">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 			</div>
-			<ul class="menu">
-				<li><a [routerLink]="''"><i class="fa-solid fa-home"></i> Home</a></li>
-				<li><a [routerLink]="'about'"><i class="fa-solid fa-user"></i> About Us</a></li>
-				<li><a [routerLink]="'services'"><i class="fa-brands fa-usps"></i> Services</a></li>
-				<li><a [routerLink]="'contact'"><i class="fa-solid fa-envelope"></i> Contact</a></li>
-				<li><a *ngIf="searchResultNormal" [href]="'normal/search-routes'">Search Routes <i class="fa fa-search"></i></a></li>
-				<li><a *ngIf="searchResultNormal" [href]="'normal/searchByDate'">Search By Date <i class="fa fa-search"></i></a></li>
-				<li><a *ngIf="searchRestultSeller" [href]="'seller/search-routes'">Search Routes <i class="fa fa-search"></i></a></li>
-				<li>
-					<a  *ngIf="logIn"
-						(click) = "redirectUser()"
-					> {{login.getUser().username}} <i class="fa-solid fa-user-tie"></i> </a>	
-				</li>
-				
-				<li>
-					<a (click)="logout()"
-					 *ngIf="logIn"
-					[routerLink]="'/signup'">Logout <i class="fa-solid fa-right-to-bracket"></i></a>
-				</li>
-				<li>
-					<a *ngIf="!logIn"
-					[routerLink]="'/signup'">Login/Register</a>
-				</li>
-			</ul>	
-            <div class="hamburger-menu">
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
+			
 		</nav>
 	</header>
 </body>
